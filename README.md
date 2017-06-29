@@ -12,6 +12,24 @@ Things you may want to cover:
 * Configuration
 
 * Database creation
+3×3
+table名
+カラム名
+カラムの持つオプション
+アソシエーション
+
+table名
+カラム名
+カラムの持つオプション
+アソシエーション
+
+table名
+カラム名
+カラムの持つオプション
+アソシエーション
+
+
+
 
 * Database initialization
 
