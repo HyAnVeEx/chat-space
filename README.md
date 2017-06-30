@@ -13,12 +13,12 @@
 
 
 ## messages table
-|  Column  |   Type   |             Options              |
-|----------|----------|----------------------------------|
-| message  | text     |                                  |
-| image    | text     |                                  |
-| user_id  | interger | null: false, , foreign_key: true |
-| group_id | interger | null: false, , foreign_key: true |
+|  Column  |   Type   |            Options            |
+|----------|----------|-------------------------------|
+| content  | text     |                               |
+| image    | text     |                               |
+| user_id  | interger | null: false,foreign_key: true |
+| group_id | interger | null: false,foreign_key: true |
 
 ### Association
 - belongs_to :user
