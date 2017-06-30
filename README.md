@@ -1,41 +1,41 @@
 # データベース設計
 ## users table
-| Column |  Type  |                    Options                    |
-|--------|--------|-----------------------------------------------|
-| name   | string | null: false, foreign_key: true , unique: true |
-| mail   | string | null: false, foreign_key: true , unique: true |
+| Column |  Type  |          Options          |
+|--------|--------|---------------------------|
+| name   | string | null: false, unique: true |
+| mail   | string | null: false, unique: true |
 
 ### Association
-- has_many :groups , through:members
+- has_and_belongs_to_many :groups
 - has_many :messages
-- has_many :members
 
 ## messages table
-|  Column |   Type   |   Options    |
-|---------|----------|--------------|
-| message | text     | null: false, |
-| user_id | interger | null: false, |
+|  Column  |   Type   |             Options              |
+|----------|----------|----------------------------------|
+| message  | text     |                                  |
+| image    | text     |                                  |
+| user_id  | interger | null: false, , foreign_key: true |
+| group_id | interger | null: false, , foreign_key: true |
 
 ### Association
-- belong_to :user
-- belong_to :group
-
+- belongs_to :user
+- belongs_to :group
 
 ## group table
-| Column |  Type  |   Options    |
-|--------|--------|--------------|
-| name   | string | null: false, |
+| Column |  Type  |           Options           |
+|--------|--------|-----------------------------|
+| name   | string | null: false, , unique: true |
 
 ### Association
-- has_many :users , through:members
+- has_and_belongs_to_many :users
 - has_many :messages
 
-## membersテーブル
+## users_groups
 |  Column  |   Type  |            Options             |
 |----------|---------|--------------------------------|
 | user_id  | integer | null: false, foreign_key: true |
 | group_id | integer | null: false, foreign_key: true |
 
 ### Association
-- belongs_to :group
 - belongs_to :user
+- belongs_to :group
