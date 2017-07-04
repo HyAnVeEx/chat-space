@@ -1,1 +1,18 @@
-%p Hello!
+%body
+  .top-header.clearfix グループを作成しました
+  .wrapper
+    = render partial: "usergroup"
+    .chat
+      = render partial: "chat-header"
+      .chat-contents
+        = render partial: "chat-contents"
+      .chat-footer
+        %form.chat-form
+          %ul
+            %li.message
+              %input.chat-footer__message-form{:placeholder => " type a message", :type => "text"}/
+            %li
+              %p.chat-footer__picture
+                %i.fa.fa-image
+            %li
+              %input.chat-footer__send{:type => "submit" ,:value => "Send"}
