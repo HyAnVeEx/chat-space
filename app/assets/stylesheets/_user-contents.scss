@@ -1,0 +1,24 @@
+.user-contents{
+  height:100px;
+  padding:0 20px;
+  background-color: #253141;
+  color: #FFFFFF;
+  &__username{
+    font-size: 16px;
+    text-align: left;
+    line-height: 100px;
+    width:100px;
+    float:left;
+  }
+  ul {
+    color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    }
+  ul li{
+     float: right;
+     padding-right: 5px;
+     line-height: 100px;
+    }
+  }

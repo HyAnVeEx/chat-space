@@ -1,1 +1,91 @@
-%p Hello!
+%body
+  .top-header.clearfix グループを作成しました
+  .wrapper
+    .usergroup
+      .user-contents
+        %h3.user-contents__username Z13_okada
+        %ul
+          %li
+            %i.fa.fa-cog.icon
+          %li
+            %i.fa.fa-pencil-square-o.icon
+      .group-contents
+        .group-content
+          %p.group-content__group-name Z13_group1
+          %p.group-content__group-comment コメント
+        .group-content
+          %p.group-content__group-name Z13_group2
+          %p.group-content__group-comment コメント
+        .group-content
+          %p.group-content__group-name Z13_group3
+          %p.group-content__group-comment コメント
+    .chat
+      .chat-header
+        %p.chat-header__group-name Z13_group1
+        %p.chat-header__chat-edit Edit
+        %p.chat-header__chat-member Member : z13_masahiro
+      .chat-contents
+        .chat-content
+          %ul
+            %li
+              %p.chat-content__chat-name z13_masahiro
+            %li
+              %p.chat-content__chat-date 2017/07/03 0:10
+            %br
+            %li
+              %p.chat-content__chat-message TEST-COMMENT
+        .chat-content
+          %ul
+            %li
+              %p.chat-content__chat-name z13_masahiro
+            %li
+              %p.chat-content__chat-date 2017/07/03 0:10
+            %br
+            %li
+              %p.chat-content__chat-message TEST-COMMENT
+        .chat-content
+          %ul
+            %li
+              %p.chat-content__chat-name z13_masahiro
+            %li
+              %p.chat-content__chat-date 2017/07/03 0:10
+            %br
+            %li
+              %p.chat-content__chat-message TEST-COMMENT
+        .chat-content
+          %ul
+            %li
+              %p.chat-content__chat-name z13_masahiro
+            %li
+              %p.chat-content__chat-date 2017/07/03 0:10
+            %br
+            %li
+              %p.chat-content__chat-message TEST-COMMENT
+        .chat-content
+          %ul
+            %li
+              %p.chat-content__chat-name z13_masahiro
+            %li
+              %p.chat-content__chat-date 2017/07/03 0:10
+            %br
+            %li
+              %p.chat-content__chat-message TEST-COMMENT
+        .chat-content
+          %ul
+            %li
+              %p.chat-content__chat-name z13_masahiro
+            %li
+              %p.chat-content__chat-date 2017/07/03 0:10
+            %br
+            %li
+              %p.chat-content__chat-message TEST-COMMENT
+      .chat-footer
+        %form.chat-form
+          %ul
+            %li.message
+              %input.chat-footer__message-form{:placeholder => " type a message", :type => "text"}/
+            %li
+              %p.chat-footer__picture
+                %i.fa.fa-image
+            %li
+              %input.chat-footer__send{:type => "submit" ,:value => "Send"}
