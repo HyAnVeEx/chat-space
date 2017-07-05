@@ -4,13 +4,12 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if
-    @user.update(name: user_params[:name],email: user_params[:email])
-    redirect_to controller: 'messages', action: 'index'
+      @user.update(name: user_params[:name],email: user_params[:email])
+      redirect_to :root
     else
-    render "edit"
+      render "edit"
     end
   end
-
   private
     def user_params
       params.require(:user).permit(:name, :email)
