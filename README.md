@@ -34,7 +34,7 @@
 - has_many :groups_users
 - has_many :messages
 
-## users_groups
+## groups_users
 |  Column  |   Type  |            Options             |
 |----------|---------|--------------------------------|
 | user_id  | integer | null: false,foreign_key: true |
