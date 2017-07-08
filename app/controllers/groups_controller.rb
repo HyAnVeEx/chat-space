@@ -17,6 +17,20 @@ class GroupsController < ApplicationController
   end
 
   def edit
+    @group = Group.find(params[:id])
+  end
+
+  def update
+    @group = Group.find(params[:id])
+    if @group.update(group_params)
+      params[:group][:user_ids].each do |id|
+        @group.groups_users.create(user_id: id)
+      end
+      flash[:notice] = "グループを編集しました。"
+      redirect_to :root
+    else
+      render "edit"
+    end
   end
 
   private
