@@ -6,11 +6,7 @@ class GroupsController < ApplicationController
   def create
      @group = Group.new(group_params)
     if @group.save
-      params[:group][:user_ids].each do |id|
-        @group.groups_users.create(user_id: id)
-      end
-      flash[:notice] = "グループを作成しました。"
-      redirect_to :root
+      redirect_to :root, notice: "グループを作成しました。"
    else
       render "new"
     end
@@ -23,11 +19,7 @@ class GroupsController < ApplicationController
   def update
     @group = Group.find(params[:id])
     if @group.update(group_params)
-      params[:group][:user_ids].each do |id|
-        @group.groups_users.create(user_id: id)
-      end
-      flash[:notice] = "グループを編集しました。"
-      redirect_to :root
+      redirect_to :root, notice: "グループを編集しました。"
     else
       render "edit"
     end
@@ -36,6 +28,6 @@ class GroupsController < ApplicationController
   private
 
   def group_params
-     params.require(:group).permit(:name, :user_ids)
+     params.require(:group).permit(:name, :user_ids => [])
   end
 end
