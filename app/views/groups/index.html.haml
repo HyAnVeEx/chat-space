@@ -1,8 +1,8 @@
 %body
   .wrapper
-    - @groups.each do |group|
-      = render partial: "usergroup", locals: { group: group }
-    / = render partial: "usergroup"
+    .usergroup
+      = render partial: "user"
+      = render partial: "group", collection: @groups
     .chat
       = render partial: "chat-header"
       .chat-contents
@@ -11,7 +11,7 @@
         %form.chat-form
           %ul
             %li.message
-              %input.chat-footer__message-form{:placeholder => " type a message", :type => "text"}/
+              %input.chat-footer__message-form{placeholder: ' type a message', type: 'text'}
             %li
               %p.chat-footer__picture
                 %i.fa.fa-image
