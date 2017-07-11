@@ -1,12 +1,8 @@
-.group-contents{
-  background-color: #2f3e51;
-  padding:0 20px;
-  min-height: 600px;
-}
-  .group-content{
-    padding:20px 0 40px;
+.group-content{
+    padding:20px;
     color: #FFFFFF;
     text-align: left;
+    background-color: #2f3e51;
     &__group-name{
       font-size: 15px;
       padding-bottom: 5px;
