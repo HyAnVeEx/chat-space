@@ -1,5 +1,5 @@
 class MessagesController < ApplicationController
-    before_action :set_group, only:[:index, :create]
+    before_action :set_group
 
   def index
     @groups = current_user.groups
@@ -9,10 +9,10 @@ class MessagesController < ApplicationController
   def create
     @message = @group.messages.new(message_params)
     if @message.save
-      redirect_to :group_messages, notice: 'メッセージを投稿しました。'
+      redirect_to :group_messages, notice: '投稿しました。'
     else
-    @groups = current_user.groups
-      render :index
+      @groups = current_user.groups
+      redirect_to :group_messages, alert: 'メッセージの入力、もしくは画像の選択をしてください'
     end
 
   end
