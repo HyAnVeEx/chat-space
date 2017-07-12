@@ -7,7 +7,7 @@
     .chat
       = render partial: "chat-header"
       .chat-contents
-        = render partial: "chat-contents"
+        = render @messages
       .chat-footer
         = form_for([@group,@message]) do |f|
           %ul

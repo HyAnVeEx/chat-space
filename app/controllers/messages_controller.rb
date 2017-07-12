@@ -2,7 +2,6 @@ class MessagesController < ApplicationController
     before_action :set_group
 
   def index
-    @groups = current_user.groups
     @message = Message.new
   end
 
@@ -11,7 +10,6 @@ class MessagesController < ApplicationController
     if @message.save
       redirect_to :group_messages, notice: '投稿しました。'
     else
-      @groups = current_user.groups
       flash.now[:alert] = 'メッセージの入力、もしくは画像の選択をしてください'
       render :index
     end
@@ -25,6 +23,8 @@ class MessagesController < ApplicationController
 
   def set_group
        @group = Group.find(params[:group_id])
+       @groups = current_user.groups
+       @messages = @group.messages.includes(:group)
   end
 
 end

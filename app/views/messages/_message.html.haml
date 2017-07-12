@@ -1,0 +1,12 @@
+.chat-content
+  %ul
+    %li
+      %p.chat-content__chat-name=current_user.name
+    %li
+      %p.chat-content__chat-date=message.created_at
+    %br
+    %li
+      %p.chat-content__chat-message
+      =message.content
+      %p.chat-content__chat-image
+      =image_tag message.image.to_s

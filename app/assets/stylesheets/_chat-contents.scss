@@ -11,6 +11,7 @@ ul li {
 }
 .chat-content{
     padding:46px 0 40px;
+    height:30%;
   &__chat-name{
     color: #434a54;
     font-size: 16px;
@@ -25,5 +26,7 @@ ul li {
     color: #666666;
     font-size: 14px;
     padding-top: 10px;
+  }
+  &__chat-image{
   }
 }
