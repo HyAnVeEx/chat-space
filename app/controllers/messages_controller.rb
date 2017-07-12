@@ -12,7 +12,8 @@ class MessagesController < ApplicationController
       redirect_to :group_messages, notice: '投稿しました。'
     else
       @groups = current_user.groups
-      redirect_to :group_messages, alert: 'メッセージの入力、もしくは画像の選択をしてください'
+      flash.now[:alert] = 'メッセージの入力、もしくは画像の選択をしてください'
+      render :index
     end
 
   end
