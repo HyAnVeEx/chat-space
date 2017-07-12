@@ -7,8 +7,11 @@
     width:calc(100vw - 570px);
     height:50px;
     padding-right: 10px;
-
   }
+  &__image-hidden {
+    display:none;
+  }
+
   &__picture{
     font-size:20px;
     line-height:50px;
