@@ -6,13 +6,13 @@ class MessagesController < ApplicationController
   end
 
   def create
-    @message = Message.new(content: message_params[:content], image: message_params[:image], user_id: current_user.id, group_id: params[:group_id])
+    @message = Message.new(message_params)
     @message.save
   end
 
   private
   def message_params
-     params.require(:message).permit(:content, :image)
+     params.require(:message).permit(:content, :image).merge(user_id: current_user.id, group_id: params[:group_id])
   end
 
 end

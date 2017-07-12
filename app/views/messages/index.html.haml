@@ -3,7 +3,7 @@
     .usergroup
       = render partial: "groups/user"
       .group_contents
-        = render partial: "groups/group", collection: @groups
+        = render @groups
     .chat
       = render partial: "chat-header"
       .chat-contents
