@@ -1,17 +1,22 @@
 %body
   .wrapper
-    = render partial: "usergroup"
+    .usergroup
+      = render partial: "groups/user"
+      .group_contents
+        = render @groups
     .chat
       = render partial: "chat-header"
       .chat-contents
         = render partial: "chat-contents"
       .chat-footer
-        %form.chat-form
+        = form_for([@group,@message]) do |f|
           %ul
             %li.message
-              %input.chat-footer__message-form{:placeholder => " type a message", :type => "text"}/
+              = f.text_field :content, class:'chat-footer__message-form', placeholder:' type a message'
             %li
               %p.chat-footer__picture
-                %i.fa.fa-image
+                = f.file_field :image, class:'chat-footer__image-hidden'
+                = f.label :image do
+                  %i.fa.fa-image
             %li
-              %input.chat-footer__send{:type => "submit" ,:value => "Send"}
+              = f.submit "Send", class:'chat-footer__send'
