@@ -3,4 +3,5 @@
   = group.name
   - if group.messages.first
     %p.group-content__group-comment=group.messages.last.content
-
+  - else
+    %p.group-content__group-comment まだコメントはありません
