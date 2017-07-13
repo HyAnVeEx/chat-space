@@ -1,7 +1,7 @@
 .group-content
   %p.group-content__group-name
   = group.name
-  - if group.messages.first
+  - if group.messages.last
     %p.group-content__group-comment=group.messages.last.content
   - else
     %p.group-content__group-comment まだコメントはありません
