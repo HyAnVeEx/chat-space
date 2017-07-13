@@ -1,4 +1,6 @@
 .group-content
   %p.group-content__group-name
   = group.name
-  %p.group-content__group-comment コメント
+  - if group.messages.first
+    %p.group-content__group-comment=group.messages.last.content
+
