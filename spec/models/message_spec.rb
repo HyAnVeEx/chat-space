@@ -3,12 +3,12 @@ require 'rails_helper'
 describe Message do
   describe '#create' do
     it "is valid with a content" do
-      message = build(:message, image:nil)
+      message = build(:message, image: nil)
       expect(message).to be_valid
     end
 
     it "is valid with a image" do
-      message = build(:message, content:nil)
+      message = build(:message, content: nil)
       expect(message).to be_valid
     end
 
