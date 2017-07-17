@@ -1,4 +1,5 @@
 class GroupsController < ApplicationController
+    before_action :move_to_sign_in
     before_action :set_group, only:[:edit,:update]
 
   def index
@@ -36,6 +37,10 @@ class GroupsController < ApplicationController
     end
     def set_group
        @group = Group.find(params[:id])
+    end
+
+    def move_to_sign_in
+          redirect_to new_user_session_path unless user_signed_in?
     end
 
 end
