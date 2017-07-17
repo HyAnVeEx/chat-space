@@ -11,16 +11,13 @@ describe MessagesController, type: :controller do
     describe 'GET #index' do
       before do
         login_user user
+        get :index, params: { group_id: group.id }
       end
       it "変数は正しく呼び出されているか？" do
-        @group = user.groups.first
-        get :index, params: { group_id: @group.id }
         groups = user.groups
         expect(assigns(:groups)).to eq groups
       end
       it "indexページに推移するか？" do
-        @group = user.groups.first
-        get :index, params: { group_id: @group.id }
         expect(response).to render_template :index
       end
     end
@@ -29,9 +26,8 @@ describe MessagesController, type: :controller do
   context 'ログインしていない場合' do
     describe 'GET #index' do
       it "サインインページにリダイレクトされるか？" do
-        @group = user.groups.first
-        get :index, params: { group_id: @group.id }
-        expect(response).to redirect_to('http://test.host/users/sign_in')
+        get :index, params: { group_id: group.id }
+        expect(response).to redirect_to new_user_session_path
       end
     end
   end
@@ -68,7 +64,7 @@ describe MessagesController, type: :controller do
       it "サインインページにリダイレクトされるか？" do
         expect{
           post :create, params: params}.to change(Message, :count).by(1)
-        expect(response).to redirect_to('http://test.host/users/sign_in')
+        expect(response).to redirect_to new_user_session_path
       end
     end
   end
