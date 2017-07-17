@@ -1,4 +1,5 @@
 class MessagesController < ApplicationController
+    before_action :move_to_sign_in
     before_action :set_group
     before_action :set_groups
     before_action :set_messages
@@ -23,6 +24,10 @@ class MessagesController < ApplicationController
      params.require(:message).permit(:content, :image).merge(user_id: current_user.id,group_id: params[:group_id])
   end
 
+  def move_to_sign_in
+        redirect_to new_user_session_path unless user_signed_in?
+  end
+
   def set_group
        @group = Group.find(params[:group_id])
   end
@@ -34,4 +39,5 @@ class MessagesController < ApplicationController
   def set_messages
        @messages = @group.messages
   end
+
 end
