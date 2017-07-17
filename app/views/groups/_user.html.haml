@@ -2,6 +2,8 @@
   %h3.user-contents__username=current_user.name
   %ul
     %li
-      %i.fa.fa-cog.icon
+      =link_to edit_user_registration_path do
+        %i.fa.fa-cog.icon
     %li
-      %i.fa.fa-pencil-square-o.icon
+      =link_to new_group_path do
+        %i.fa.fa-pencil-square-o.icon
