@@ -1,7 +1,5 @@
 $(function(){
   function buildHTML(message){
-    console.log(message);
-    if (message.image) {
     var html = `<div class="chat-content">
       <ul class="clearfix">
         <li>
@@ -14,31 +12,12 @@ $(function(){
         </li>
         <br>
         <li>
-          <p class="chat-content__chat-message">${message.content}
-          </p>
-          <img src = '${message.image}' >
-        </li>
-      </ul>
-    </div>`
-    } else {
-    var html = `<div class="chat-content">
-      <ul class="clearfix">
-        <li>
-          <p class="chat-content__chat-name">${message.name}
-          </p>
-        </li>
-        <li>
-          <p class="chat-content__chat-date">${message.time}
-          </p>
-        </li>
-        <br>
-        <li>
-          <p class="chat-content__chat-message">${message.content}
-          </p>
-        </li>
-      </ul>
-    </div>`
+          <p class="chat-content__chat-message">  ${message.content}
+          </p>`;
+  if (message.image) {
+        html += `<img src = '${message.image}' >`;
     }
+     html +=`</li> </ul> </div>`
     return html;
   }
   $('#new_message').on('submit', function(e){
