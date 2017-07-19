@@ -36,7 +36,7 @@ function appendUser(user) {
       dataType: 'json'
     })
     .done(function(users) {
-      $("#user-search-result").empty();
+      $(user_list).empty();
         if (users.length !== 0  && input.length !== 0) {
           users.forEach(function(user){
             appendUser(user);
@@ -50,15 +50,15 @@ function appendUser(user) {
       alert('ユーザ検索に失敗しました');
     });
   });
-    $(document).on("click", ".user-search-add" ,function() {
-      var userid = $(this).data("user-id");
-      var name = $(this).data("user-name");
-      addUser(userid, name);
+  $(document).on("click", ".user-search-add" ,function() {
+    var userid = $(this).data("user-id");
+    var name = $(this).data("user-name");
+    addUser(userid, name);
     $(this).parent().remove();
-    });
-    $(document).on("click", ".user-search-remove" ,function() {
+  });
+  $(document).on("click", ".user-search-remove" ,function() {
     $(this).parent().remove();
-    });
+  });
 });
 
 
