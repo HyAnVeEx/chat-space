@@ -6,7 +6,6 @@ class GroupsController < ApplicationController
     @groups = current_user.groups
   end
 
-
   def new
     @group = Group.new
   end
@@ -42,5 +41,4 @@ class GroupsController < ApplicationController
     def move_to_sign_in
           redirect_to new_user_session_path unless user_signed_in?
     end
-
 end
