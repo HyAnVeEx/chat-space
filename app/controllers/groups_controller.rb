@@ -6,7 +6,6 @@ class GroupsController < ApplicationController
     @groups = current_user.groups
   end
 
-
   def new
     @group = Group.new
   end
@@ -14,7 +13,7 @@ class GroupsController < ApplicationController
   def create
      @group = Group.new(group_params)
     if @group.save
-      redirect_to root_path, notice: 'グループを作成しました。'
+      redirect_to group_messages_path(@group), notice: 'グループを作成しました。'
    else
       render :new
     end
@@ -42,5 +41,4 @@ class GroupsController < ApplicationController
     def move_to_sign_in
           redirect_to new_user_session_path unless user_signed_in?
     end
-
 end
