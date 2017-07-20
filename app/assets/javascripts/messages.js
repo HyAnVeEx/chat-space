@@ -57,7 +57,7 @@ $(function(){
     .done(function(messages){
       $.each(messages,function(i,message){
         var html = buildHTML(message);
-        $('.chat-contents').append(html)
+        $('.chat-contents').append(html);
         $('.chat-contents').animate({scrollTop: $('.chat-contents')[0].scrollHeight}, 'fast');
       });
     $(document).on("turbolinks:load",function() {
