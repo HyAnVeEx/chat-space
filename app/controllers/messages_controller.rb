@@ -6,6 +6,10 @@ class MessagesController < ApplicationController
 
   def index
     @message = Message.new
+    respond_to do |format|
+     format.html
+     format.json
+    end
   end
 
   def create
@@ -19,7 +23,6 @@ class MessagesController < ApplicationController
       flash.now[:alert] = 'メッセージの入力、もしくは画像の選択をしてください'
       render :index
     end
-
   end
 
   private
